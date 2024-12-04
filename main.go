@@ -8,19 +8,19 @@ import (
 
 // Общие константы для вычислений.
 const (
-	MInKm      = 1000 
-	MinInHours = 60   
-	LenStep    = 0.65 
-	CmInM      = 100 
+	MInKm      = 1000
+	MinInHours = 60
+	LenStep    = 0.65
+	CmInM      = 100
 )
 
 // Training общая структура для всех тренировок
 type Training struct {
-	TrainingType string       
-	Action       int           
-	LenStep      float64      
-	Duration     time.Duration 
-	Weight       float64       
+	TrainingType string
+	Action       int
+	LenStep      float64
+	Duration     time.Duration
+	Weight       float64
 }
 
 // distance возвращает дистанцию, которую преодолел пользователь.
@@ -80,8 +80,9 @@ type CaloriesCalculator interface {
 
 // Константы для расчета потраченных килокалорий при беге.
 const (
-	CaloriesMeanSpeedMultiplier = 18  
-	CaloriesMeanSpeedShift      = 1.79 
+	CaloriesMeanSpeedMultiplier = 18
+	CaloriesMeanSpeedShift      = 1.79
+)
 
 // Running структура, описывающая тренировку Бег.
 type Running struct {
@@ -110,15 +111,15 @@ func (r Running) TrainingInfo() InfoMessage {
 
 // Константы для расчета потраченных килокалорий при ходьбе.
 const (
-	CaloriesWeightMultiplier      = 0.035 
-	CaloriesSpeedHeightMultiplier = 0.029 
-	KmHInMsec                     = 0.278 
+	CaloriesWeightMultiplier      = 0.035
+	CaloriesSpeedHeightMultiplier = 0.029
+	KmHInMsec                     = 0.278
 )
 
 // Walking структура описывающая тренировку Ходьба
 type Walking struct {
 	Training
-	Height float64 
+	Height float64
 }
 
 // Calories возвращает количество потраченных килокалорий при ходьбе.
@@ -145,9 +146,9 @@ func (w Walking) TrainingInfo() InfoMessage {
 
 // Константы для расчета потраченных килокалорий при плавании.
 const (
-	SwimmingLenStep                  = 1.38 
+	SwimmingLenStep                  = 1.38
 	SwimmingCaloriesMeanSpeedShift   = 1.1
-	SwimmingCaloriesWeightMultiplier = 2    
+	SwimmingCaloriesWeightMultiplier = 2
 )
 
 // Swimming структура, описывающая тренировку Плавание
